@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Kiosk Review</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0f2a;
+      margin: 0;
+      padding: 0;
+      color: #e0f7ff;
+    }
+
+    header {
+      background: linear-gradient(145deg, #001f4d, #004080);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .stars label {
+      font-size: 2rem;
+      color: lightgray;
+      cursor: pointer;
+    }
+
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: gold;
+    }
+
+    .category {
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      background: #004080;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Builders Section */
+    .builders-section {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .builders-image-wrapper {
+      display: inline-block;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .builders-image-wrapper:hover {
+      transform: scale(1.02);
+    }
+
+    .builders-section img {
+      width: 300px;
+      border-radius: 20px;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .builders-section h2 {
+      font-size: 2rem;
+      color: #00d9ff;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .builders-section p {
+      font-size: 1.1rem;
+      color: #cbe7f5;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Kiosk Overview */
+    .kiosk-overview {
+      background: linear-gradient(145deg, #0a0f2a, #0e1439);
+      padding: 3rem 1rem;
+      color: #e0f7ff;
+      text-align: center;
+    }
+
+    .overview-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .kiosk-overview img {
+      width: 320px;
+      max-width: 90%;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.25), 0 0 60px rgba(0, 217, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .kiosk-overview img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+    }
+
+    .overview-text {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .overview-text h2 {
+      font-size: 2rem;
+      color: #00d9ff;
+      margin-bottom: 1rem;
+    }
+
+    .overview-text p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    @media(max-width: 600px) {
+      .features { grid-template-columns: 1fr; }
+      .overview-text { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/cover.png" alt="Smart Kiosk Cover">
+  </header>
+
+  <!-- Builders Section -->
+  <section class="builders-section">
+    <div class="builders-image-wrapper" onclick="revealImage(this)">
+      <img src="images/Builders.png" alt="The Builders">
+      <div class="overview-image">
+    </div>
+    <h2>Meet the Innovators Behind the Magic</h2>
+    <p>
+      This innovative smart kiosk was developed by Gopika A, Gummadi Tejaswi, Kavana B K, and Chaithra M N —
+      final year students of Electronics and Communication Engineering. Designed to deliver institutional information seamlessly,
+      this kiosk is adaptable to any public space, offering users a convenient and intuitive way to explore key details about their surroundings.
+      A standout feature is the inclusion of a 3D holographic display, which brings an added layer of interactivity and creativity,
+      making this project a blend of both technical depth and engaging design.
+    </p>
+  </section>
+
+  <!-- Kiosk Overview Section -->
+  <section class="kiosk-overview">
+    <div class="overview-container">
+      <img src="images/kiosk.jpg" alt="Smart Kiosk Overview">
+      <div class="overview-text">
+        <h2>Smart Kiosk Overview</h2>
+        <p>
+          The Smart Kiosk is a futuristic, voice-enabled system designed to deliver essential institutional information with ease. It features a touchscreen interface paired with a
+          microphone for voice interactions, alongside a holographic pyramid display that brings a new dimension of visual engagement. With a compact and intuitive design, it is perfect
+          for placement in academic or public spaces, where accessibility and innovation meet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rating Section -->
+  <section>
+    <h2>Rate the Features</h2>
+    <form id="reviewForm">
+      <div class="category">
+        <h3>1. Voice Assistant</h3>
+        <div class="stars">
+          <input type="radio" id="voice5" name="voice" value="5"><label for="voice5">★</label>
+          <input type="radio" id="voice4" name="voice" value="4"><label for="voice4">★</label>
+          <input type="radio" id="voice3" name="voice" value="3"><label for="voice3">★</label>
+          <input type="radio" id="voice2" name="voice" value="2"><label for="voice2">★</label>
+          <input type="radio" id="voice1" name="voice" value="1"><label for="voice1">★</label>
+        </div>
+      </div>
+      <div class="category">
+        <h3>2. Website</h3>
+        <div class="stars">
+          <input type="radio" id="web5" name="website" value="5"><label for="web5">★</label>
+          <input type="radio" id="web4" name="website" value="4"><label for="web4">★</label>
+          <input type="radio" id="web3" name="website" value="3"><label for="web3">★</label>
+          <input type="radio" id="web2" name="website" value="2"><label for="web2">★</label>
+          <input type="radio" id="web1" name="website" value="1"><label for="web1">★</label>
+        </div>
+      </div>
+      <div class="category">
+        <h3>3. Hologram Display</h3>
+        <div class="stars">
+          <input type="radio" id="holo5" name="hologram" value="5"><label for="holo5">★</label>
+          <input type="radio" id="holo4" name="hologram" value="4"><label for="holo4">★</label>
+          <input type="radio" id="holo3" name="hologram" value="3"><label for="holo3">★</label>
+          <input type="radio" id="holo2" name="hologram" value="2"><label for="holo2">★</label>
+          <input type="radio" id="holo1" name="hologram" value="1"><label for="holo1">★</label>
+        </div>
+      </div>
+      <div class="category">
+        <h3>4. Chatbot</h3>
+        <div class="stars">
+          <input type="radio" id="bot5" name="chatbot" value="5"><label for="bot5">★</label>
+          <input type="radio" id="bot4" name="chatbot" value="4"><label for="bot4">★</label>
+          <input type="radio" id="bot3" name="chatbot" value="3"><label for="bot3">★</label>
+          <input type="radio" id="bot2" name="chatbot" value="2"><label for="bot2">★</label>
+          <input type="radio" id="bot1" name="chatbot" value="1"><label for="bot1">★</label>
+        </div>
+      </div>
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <!-- Feature Highlights -->
+  <section>
+    <h2>Features You’ll Love</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h4>Voice Activated</h4>
+        <p>Control the kiosk and ask questions with natural language—no buttons needed.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Holographic Projection</h4>
+        <p>3D visuals that showcase our projects and principles of light beautifully.</p>
+      </div>
+      <div class="feature-card">
+        <h4>AI Chatbot</h4>
+        <p>Friendly assistant that guides users through departments and project info.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Project Showcase</h4>
+        <p>Real-time student work and research displayed through a clean, modern website.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Thank you for using the Smart Kiosk! Your feedback helps us grow.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const form = document.getElementById('reviewForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const ratings = {
+        voice: data.get('voice'),
+        website: data.get('website'),
+        hologram: data.get('hologram'),
+        chatbot: data.get('chatbot')
+      };
+      localStorage.setItem('kioskReview', JSON.stringify(ratings));
+      alert('Thanks for your feedback!');
+      form.reset();
+    });
+
+    function revealImage(wrapper) {
+      const img = wrapper.querySelector('img');
+      img.style.opacity = 0.2;
+      setTimeout(() => {
+        img.style.transform = 'scale(1.05)';
+        img.style.opacity = 1;
+      }, 200);
+    }
+  </script>
+</body>
+</html>
